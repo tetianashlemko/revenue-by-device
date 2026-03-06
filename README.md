@@ -1,6 +1,30 @@
-# revenue-by-device
-create a table with the following columns  
+# Global E-commerce Performance Analysis (SQL)
 
-| Continent | Revenue | Revenue from Mobile | Revenue from Desktop | % Revenue from Total | Account Count | Verified Account | Session Count |
+# Комплексний аналіз регіональних доходів та активності користувачів за допомогою SQL.
 
+## Огляд проєкту
+Цей проєкт присвячений аналізу ефективності глобальних продажів та поведінки користувачів на платформі електронної комерції. 
+Основна мета: агрегувати дані з різних джерел для створення комплексного звіту, що відображає дохід, технічні метрики (типи пристроїв) та якість користувацької бази (верифікація акаунтів) у розрізі континентів.
+
+## Технологічний стек
+SQL (BigQuery)
+Техніки: CTE (Common Table Expressions), Window Functions, Conditional Aggregation, Multi-table Joins.
+
+## Структура даних
+Для аналізу було використано 5 таблиць:
+DA.order — дані про замовлення та транзакції.
+DA.product — інформація про товари та ціни.
+DA.session_params — параметри сесій (географія, типи пристроїв).
+DA.account — дані про користувачів та статус їх верифікації.
+DA.account_session — таблиця зв'язків між акаунтами та сесіями.
+
+## Ключові метрики у звіті
+Підсумкова таблиця містить наступні колонки:
+Continent: Регіон користувача.
+Revenue: Загальний обсяг продажів у USD.
+Revenue from Mobile/Desktop: Розподіл доходу за типом пристрою.
+% Revenue from Total: Частка доходу регіону від загального глобального доходу (розраховано через Window Functions).
+Account Count: Загальна кількість користувачів, що взаємодіяли з платформою.
+Verified Account: Кількість підтверджених профілів.
+Session Count: Загальна активність (кількість сесій).
 
